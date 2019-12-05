@@ -10,7 +10,7 @@ Suite Teardown  Close Browser
 
 *** Test Cases ***
 Logged out user can search for product
-    [Documentation]  This is some basic info about the test
+    [Documentation]  Test Case for SD-2
     [Tags]  Smoke
     Search for product  Botanics
 
