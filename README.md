@@ -20,4 +20,6 @@ Execution will create a Results directory with Test Results
 Open `Report.html` in browser of choice to view the test run results
 
 ## Cleanup
-To uninstall the pip packages please run `Cleanup.bat`
+To uninstall the pip packages which were installed as a part of execution please run `Cleanup.bat`
+
+_*** Path setup is only for the run so it will be restored as normal after the execution**_
