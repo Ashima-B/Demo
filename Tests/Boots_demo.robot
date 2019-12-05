@@ -15,6 +15,7 @@ Logged out user can search for product
     Search for product  Botanics
 
 Logged out user can view the product
+    [Documentation]  Test Case for SD-3
     Search for product  Botanics
     Results for searched product is displayed
 
