@@ -15,76 +15,49 @@ Results for searched product is displayed
     Product_Page.Verify page loaded  Botanics
 
 User can select the sub category
-    Product_Page.
+    Product_Page.Select sub-category from product page
     Product_Page.Verify page loaded  organic
 
 User can add the selected item to cart
     Sleep  2s
-    Scroll Element Into View  id=productPageAdd2Cart
-    wait until element is visible  id=productPageAdd2Cart
-    Click Element  id=productPageAdd2Cart
+    Product_Page.Product added to Cart
 
 User can click on proceed checkout button
-    Wait Until Element Is Visible  id=widget_minishopcart  5
-    Sleep  2s
-    Click Element  id=widget_minishopcart
-    Click Element  id = GotoCartButton2
+    Product_Page.Proceed to checkout
+
 
 Verify that item is added in cart
-    Wait Until Page Contains  your basket
-    ${status}  Get Value  class= basket_quantity
-    run keyword if  ${status} == 1  Log  1 item in cart
-    ...  ELSE IF  Fail  item not in cart
+    Product_Page.Item should be added to cart
+
 
 User can add more item to cart
-    Wait Until Element Is Visible  id=qty_paid_1  5
-    ${item_value_previous}  Get Value  id=qty_paid_1
-    Click Element  id=plusId_1
-    ${item_value_new}  Get Value  id=qty_paid_1
-    run keyword if  ${item_value_new} == ${item_value_previous}+1  Log  ${item_value_new} item in cart
-    ...  ELSE  Fail  Item not added in cart
-    Sleep  3s
+    CheckOut_Page.More items added to cart
 
 User can remove item from cart
-    Wait Until Element Is Visible  id=qty_paid_1  5
-    ${item_value_previous}  Get Value  id=qty_paid_1
-    Log  ${item_value_previous}
-    Click Element  id=minusId_1
-    ${item_value_new}  Get Value  id=qty_paid_1
-    log  ${item_value_new}
-    run keyword if  ${item_value_new} == ${item_value_previous}-1  Log  ${item_value_new} item in cart
-    ...  ELSE  Fail  Item cannnot be removed from cart as cart is empty
+    CheckOut_Page.Item removed from cart
 
 User can remove last item from cart
-    Wait Until Element Is Visible  id=qty_paid_1  5
-    Click Element  id=minusId_1
-    User gets empty cart confirmation
-    User selects Yes
+    CheckOut_Page.Last item removed from cart
+    CheckOut_Page.User gets empty cart confirmation
+    CheckOut_Page.Select Yes
 
 User gets empty cart confirmation
-     Wait Until Element Is Visible  class=popup_overlay  5
+     CheckOut_Page.User gets empty cart confirmation
 
 User selects Yes
-     Wait Until Element Is Visible  id=basket_confirmation_button_yes  5
-     Click Element   id=basket_confirmation_button_yes
-     wait until element is visible  id=WC_ShopCartDisplay_div_6  5
-     Wait until page contains  your basket is empty
+     CheckOut_Page.Select Yes
 
 User selects No
-     Wait Until Element Is Visible  id=basket_confirmation_button_no  5
-     Click Element   id=basket_confirmation_button_no
+     CheckOut_Page.Select No
 
 User clicks on Checkout button
-    Click Element  id=basket_top_checkout
-    Sleep  5s
+     CheckOut_Page.Select Checkout button
 
 User must loggin to proceed
-     Wait until page contains  Log in
+     CheckOut_Page.Login to proceed
 
 User enters the email id
-    Input Text  class=gigya-input-text  ashima.2189@gmail.com
+    Landing_Page.Enter the email id
 
 User enters the password and selects Log In
-    Input Text  class=gigya-input-password  Ashima@2189
-    Click Element   class=gigya-input-submit
-    Sleep  4s
+     Landing_Page.Enter the password and Log In
