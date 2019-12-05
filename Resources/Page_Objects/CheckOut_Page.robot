@@ -13,7 +13,7 @@ More items added to cart
     ${item_value_new}  Get Value  id=qty_paid_1
     run keyword if  ${item_value_new} == ${item_value_previous}+1  Log  ${item_value_new} item in cart
     ...  ELSE  Fail  Item not added in cart
-    Sleep  3s
+    Sleep  4s
 
 Item removed from cart
     Wait Until Element Is Visible  id=qty_paid_1  5
@@ -28,8 +28,6 @@ Item removed from cart
 Last item removed from cart
     Wait Until Element Is Visible  id=qty_paid_1  5
     Click Element  id=minusId_1
-    User gets empty cart confirmation
-    User selects Yes
 
 User gets empty cart confirmation
      Wait Until Element Is Visible  class=popup_overlay  5
@@ -51,3 +49,11 @@ Select Checkout button
 
 Login to proceed
      Wait until page contains  Log in
+
+Enter the email id
+    Input Text  class=gigya-input-text  ashima.2189@gmail.com
+
+Enter the password and Log In
+    Input Text  class=gigya-input-password  Ashima@2189
+    Click Element   class=gigya-input-submit
+    Sleep  4s

@@ -1,5 +1,4 @@
 *** Settings ***
-Library  SeleniumLibrary
 Resource  ./Page_Objects/Landing_Page.robot
 Resource  ./Page_Objects/Product_Page.robot
 Resource  ./Page_Objects/CheckOut_Page.robot
@@ -57,7 +56,7 @@ User must loggin to proceed
      CheckOut_Page.Login to proceed
 
 User enters the email id
-    Landing_Page.Enter the email id
+    CheckOut_Page.Enter the email id
 
 User enters the password and selects Log In
-     Landing_Page.Enter the password and Log In
+     CheckOut_Page.Enter the password and Log In

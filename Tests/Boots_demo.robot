@@ -3,16 +3,18 @@ Documentation  This is some basic info about the whole suite
 Library  SeleniumLibrary
 Resource  ../Resources/Common_Keywords.robot
 Resource  ../Resources/Boots_Keywords.robot
-Suite Setup  Open and Maximize Chrome Browser
-Suite Teardown  Close Browser
+Test Setup  Open and Maximize Chrome Browser
+Test Teardown  Close Browser
 # Copy/paste the line below into Terminal to execute:
-# robot -d results tests/amazon.robot
+# robot -d Results Tests/Boots_demo.robot
 
 *** Test Cases ***
 Logged out user can search for product
     [Documentation]  Test Case for SD-2
     [Tags]  Smoke
+    Get system under test information
     Search for product  Botanics
+
 
 Logged out user can view the product
     [Documentation]  Test Case for SD-3
