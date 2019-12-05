@@ -1,0 +1,1 @@
+pip uninstall -y -r ../Dependencies/requirements.txt
