@@ -1,21 +1,22 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  ./Page_Objects/Landing_Page.robot
+Resource  ./Page_Objects/Product_Page.robot
+Resource  ./Page_Objects/CheckOut_Page.robot
 
 *** Keywords ***
 
 Search for product
     [Arguments]  ${Product_Name}
-    Wait Until Page Contains  shop by department
-    Wait Until Element Is Visible  id=AlgoliaSearchInput  5
-    Input Text   id=AlgoliaSearchInput  ${Product_Name}
-    Click Element  id=algolia-search-button
+    Landing_Page.Verify page loaded
+    Landing_Page.Insert product into search bar  ${Product_Name}
 
 Results for searched product is displayed
-    Wait Until Page Contains  Botanics
+    Product_Page.Verify page loaded  Botanics
 
 User can select the sub category
-    Click Element   id=SBN_organic_4_-1009_3074457345619273472
-    Wait until page contains  organic
+    Product_Page.
+    Product_Page.Verify page loaded  organic
 
 User can add the selected item to cart
     Sleep  2s
